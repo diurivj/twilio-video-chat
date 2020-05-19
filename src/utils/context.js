@@ -106,7 +106,7 @@ class MyProvdier extends Component {
     const { identity, room } = this.state
     e.preventDefault()
     // Cambia ese endpoint por el tuyo de twilio, este lo voy a deshabilitar
-    const { data } = await axios.post(process.env.REACT_APP_TWILIO_ENDPOINT, { identity, room })
+    const { data } = await axios.post('https://boysenberry-pike-1618.twil.io/create-room-token', { identity, room })
     this.setState({ token: data })
     this.props.history.push(`/room/${this.state.room}`)
   }
